@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database:
+    image: quay.io/azavea/postgis:2.4-postgres10.3-slim
+    volumes:
+      - ./sql:/usr/src/sql
+    environment:
+      - POSTGRES_USER=phillybuildings
+      - POSTGRES_PASSWORD=phillybuildings
+      - POSTGRES_DB=buildings
+    ports:
+      - "5432:5432"
